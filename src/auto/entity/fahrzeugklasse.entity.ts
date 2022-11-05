@@ -1,3 +1,5 @@
+//Können wir auch ohne die Klasse leben?
+
 /**
  * Das Modul besteht aus der Entity-Klasse.
  * @packageDocumentation

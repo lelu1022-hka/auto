@@ -57,14 +57,12 @@ export class Auto {
     @ApiProperty({ example: '2021-01-31' })
     readonly datum: Date | string | undefined;
 
-    @Column('varchar')
-    @ApiProperty({ example: 'https://test.de/', type: String })
-    readonly homepage: string | undefined;
-
     @OneToMany(() => Fahrzeugklasse, (fahrzeugklasse) => fahrzeugklasse.auto, {
         eager: true,
         cascade: ['insert'],
     })
+
+    //Brauchen wir das wirklich?
     @ApiProperty({ example: ['CABRIO', 'SPORT'] })
     readonly fahrzeugklassen!: Fahrzeugklasse[];
 
