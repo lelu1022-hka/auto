@@ -27,12 +27,12 @@
 -- (11) exit
 
 -- https://www.postgresql.org/docs/current/sql-createrole.html
-CREATE ROLE @auto LOGIN PASSWORD 'p';
+CREATE ROLE autodb LOGIN PASSWORD 'p';
 
 -- https://www.postgresql.org/docs/current/sql-createdatabase.html
-CREATE DATABASE @auto;
+CREATE DATABASE autodb;
 
-GRANT ALL ON DATABASE @auto TO @auto;
+GRANT ALL ON DATABASE autodb TO autodb;
 
 -- https://www.postgresql.org/docs/10/sql-createtablespace.html
-CREATE TABLESPACE autospace OWNER @auto LOCATION '/var/lib/postgresql/tablespace/auto';
+CREATE TABLESPACE autospace OWNER autodb LOCATION '/var/lib/postgresql/tablespace/auto';

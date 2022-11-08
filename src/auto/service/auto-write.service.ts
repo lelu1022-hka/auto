@@ -150,7 +150,6 @@ export class AutoWriteService {
         );
     }
 
-    //Muss noch behoben werden
     async #validateCreate(auto: Auto): Promise<CreateError | undefined> {
         const validateResult = this.#validationService.validate(auto);
         if (validateResult !== undefined) {
