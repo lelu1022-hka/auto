@@ -1,0 +1,40 @@
+### Suche alle Autos
+GET {{restUrl}}
+
+### Suche mit vorhandener Auto-ID
+GET {{restUrl}}/00000000-0000-0000-0000-000000000001
+
+### Suche mit vorhandener Auto-ID und Versionsnummer
+GET {{restUrl}}/00000000-0000-0000-0000-000000000001
+If-None-Match: "0"
+
+### Suche mit vorhandener Auto-ID und falscher Versionsnummer
+GET {{restUrl}}/00000000-0000-0000-0000-000000000001
+If-None-Match: 0
+
+### Suche mit ungueltiger Auto-ID
+GET {{restUrl}}/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY
+
+### Suche mit nicht-vorhandener Auto-ID
+GET {{restUrl}}/99999999-9999-9999-9999-999999999999
+
+### Suche mit vorhandener Marke
+GET {{restUrl}}?titel=a
+
+### Suche mit nicht-vorhandener Marke
+GET {{restUrl}}?titel=xxx
+
+### Suche mit vorhandener Fahrzeugklasse
+GET {{restUrl}}?cabrio=true&sport=true
+
+### Suche mit vorhandener Fahrzeugklasse "CABRIO"
+GET {{restUrl}}?cabrio=true
+
+### Suche mit vorhandener Fahrzeugklasse "SPORT"
+GET {{restUrl}}?sport=true
+
+### Suche mit nicht-vorhandener Property
+GET {{restUrl}}?php=true
+
+### Suche mit gueltigem Typ
+GET {{restUrl}}?art=ELEKTRO
