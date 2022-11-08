@@ -21,9 +21,9 @@ import {
 } from '@nestjs/common';
 import { ApolloDriver } from '@nestjs/apollo';
 import { AuthModule } from './security/auth/auth.module.js';
-import { BuchGetController } from './buch/rest/buch-get.controller.js';
-import { BuchModule } from './buch/buch.module.js';
-import { BuchWriteController } from './buch/rest/buch-write.controller.js';
+import { AutoGetController } from './auto/rest/auto-get.controller.js';
+import { AutoModule } from './auto/auto.module.js';
+import { AutoWriteController } from './auto/rest/auto-write.controller.js';
 import { DevModule } from './config/dev/dev.module.js';
 import { GraphQLModule } from '@nestjs/graphql';
 import { HealthModule } from './health/health.module.js';
