@@ -1,0 +1,92 @@
+### Suche id, marke, typ und version von allen Autos
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+  autos {
+    id
+    marke
+    typ
+    version
+  }
+}
+
+### Suche marke, typ und version von einem Auto mit vorhandener Auto-ID
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($id: ID! = "00000000-0000-0000-0000-000000000001") {
+  auto(id: $id) {
+    marke
+    typ
+    version
+  }
+}
+
+{
+  "id": "00000000-0000-0000-0000-000000000001"
+}
+
+### Suche marke von einem Auto mit nicht-vorhandener Auto-ID
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($id: ID! = "99999999-9999-9999-9999-999999999999") {
+  auto(id: $id) {
+    marke
+  }
+}
+
+{
+  "id": "99999999-9999-9999-9999-999999999999"
+}
+
+### Suche typ von Autos mit vorhandener Marke
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($marke: String = "Alpha") {
+  autos(marke: $marke) {
+    typ
+  }
+}
+
+{
+  "marke": "Alpha"
+}
+
+### Suche marke, typ und fahrzeugklassen von Autos mit vorhandener Marke
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($marke: String = "a") {
+  autos(marke: $marke) {
+    marke
+    typ
+    fahrzeugklassen
+  }
+}
+
+{
+  "marke": "a"
+}
+
+### Suche typ von Autos mit NICHT-vorhandener Marke
+POST {{graphQlUrl}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query ($marke: String = "Nichtvorhanden") {
+  autos(marke: $marke) {
+    typ
+  }
+}
+
+{
+  "marke": "Nichtvorhanden"
+}
