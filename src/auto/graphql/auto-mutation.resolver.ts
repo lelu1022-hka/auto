@@ -116,7 +116,7 @@ export class AutoMutationResolver {
             case 'ConstraintViolations':
                 return err.messages.join(' ');
             case 'AutoNotExists':
-                return `Es gibt kein Buch mit der ID ${err.id}`;
+                return `Es gibt kein Auto mit der ID ${err.id}`;
             case 'VersionInvalid':
                 return `"${err.version}" ist keine gueltige Versionsnummer`;
             case 'VersionOutdated':
