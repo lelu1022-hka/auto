@@ -1,0 +1,113 @@
+// Preview durch <Strg><Shift>v
+
+= Entwickler/innen/handbuch
+:doctype: book
+:toc: left
+:sectanchors:
+:sectlinks:
+:sectnums:
+:source-highlighter: coderay
+:icons: font
+// :kroki-server-url: https://kroki.io
+
+// https://github.com/asciidoctor/asciidoctorj
+// https://github.com/asciidoctor/asciidoctor-diagram
+// http://de.plantuml.com/classes.html
+// http://de.plantuml.com/component.html
+// https://github.com/odrotbohm/asciidoctor-plantuml
+
+== Der Applikationsserver
+
+=== Der Applikationsserver im Überblick
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+.Use Cases
+[plantuml,use-cases,svg]
+----
+include::use-cases.plantuml[]
+----
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+.Komponentendiagramm
+[plantuml,komponenten,svg]
+----
+include::komponenten.plantuml[]
+----
+
+=== Die REST-Schnittstelle
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+."BuchGetController" für Lesezugriffe an der REST-Schnittstelle
+[plantuml,BuchGetController,svg]
+----
+include::BuchGetController.plantuml[]
+----
+
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+."BuchWriteController" für Schreibzugriffe an der REST-Schnittstelle
+[plantuml,BuchGetController,svg]
+----
+include::BuchWriteController.plantuml[]
+----
+
+=== Die GraphQL-Schnittstelle
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+.BuchQueryResolver für Lesezugriffe an der GraphQL-Schnittstelle
+[plantuml,BuchQueryResolver,svg]
+----
+include::BuchQueryResolver.plantuml[]
+----
+
+At vero eos et accusam et justo duo dolores et ea rebum.
+
+.BuchMutationResolver für Schreibzugriffe an der GraphQL-Schnittstelle
+[plantuml,BuchMutationResolver,svg]
+----
+include::BuchMutationResolver.plantuml[]
+----
+
+=== Der Anwendungskern
+
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+
+."BuchReadService" im Anwendungskern
+[plantuml,BuchReadService,svg]
+----
+include::BuchReadService.plantuml[]
+----
+
+Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget
+malesuada.
+
+."BuchWriteService" im Anwendungskern
+[plantuml,BuchWriteService,svg]
+----
+include::BuchWriteService.plantuml[]
+----
+
+=== Klasse für Entities
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+.Entity
+[plantuml,Buch,svg]
+----
+include::Buch.plantuml[]
+----
+
+== Programmierrichtlinien für TypeScript und JavaScript
+
+Für die Programmierung mit *TypeScript* und *JavaScript* wird folgende
+Styleguides empfehlenswert:
+
+[horizontal]
+_Microsoft_:: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
+_Angular_:: https://angular.io/docs/ts/latest/guide/style-guide.html
+_Google_:: https://google.github.io/styleguide/tsguide.html
+_React_:: https://github.com/airbnb/javascript/tree/master/react
