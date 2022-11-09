@@ -19,10 +19,10 @@ GET {{restUrl}}/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY
 GET {{restUrl}}/99999999-9999-9999-9999-999999999999
 
 ### Suche mit vorhandener Marke
-GET {{restUrl}}?titel=a
+GET {{restUrl}}?marke=tesla
 
 ### Suche mit nicht-vorhandener Marke
-GET {{restUrl}}?titel=xxx
+GET {{restUrl}}?marke=xxx
 
 ### Suche mit vorhandener Fahrzeugklasse
 GET {{restUrl}}?cabrio=true&sport=true
