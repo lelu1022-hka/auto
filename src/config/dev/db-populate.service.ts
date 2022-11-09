@@ -4,16 +4,16 @@
  */
 
 import { Injectable, type OnApplicationBootstrap } from '@nestjs/common';
- import { dbPopulate, typeOrmModuleOptions } from '../db.js';
- import { Auto } from '../../auto/entity/auto.entity.js';
- import { InjectRepository } from '@nestjs/typeorm';
- import { Repository } from 'typeorm';
- import { Fahrzeugklasse } from '../../auto/entity/fahrzeugklasse.entity.js';
- import { autos } from './testdaten.js';
- import { configDir } from '../node.js';
- import { getLogger } from '../../logger/logger.js';
- import { readFileSync } from 'node:fs';
- import { resolve } from 'node:path';
+import { dbPopulate, typeOrmModuleOptions } from '../db.js';
+import { Auto } from '../../auto/entity/auto.entity.js';
+import { Fahrzeugklasse } from '../../auto/entity/fahrzeugklasse.entity.js';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { autos } from './testdaten.js';
+import { configDir } from '../node.js';
+import { getLogger } from '../../logger/logger.js';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 /**
  * Die Test-DB wird im Development-Modus neu geladen, nachdem die Module

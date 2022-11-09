@@ -3,7 +3,7 @@
  * @packageDocumentation
  */
 
- import {
+import {
     Controller,
     HttpStatus,
     Post,
