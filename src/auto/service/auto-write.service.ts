@@ -163,6 +163,9 @@ export class AutoWriteService {
         if (autos.length > 0) {
             return { type: 'MarkeExists', marke };
         }
+
+        this.#logger.debug('#validateCreate: ok');
+        return undefined;
     }
 
     async #validateUpdate(
