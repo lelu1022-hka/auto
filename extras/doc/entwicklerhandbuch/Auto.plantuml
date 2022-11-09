@@ -1,0 +1,53 @@
+' Preview durch <Alt>d
+
+@startuml Entity
+
+package typeorm {
+  class "@Entity" as Entity
+  hide Entity circle
+  class "@Column" as Column
+  hide Column circle
+  class "@PrimaryColumn" as PrimaryColumn
+  hide PrimaryColumn circle
+  class "@OneToMany" as OneToMany
+  hide OneToMany circle
+  class "@JoinColumn" as JoinColumn
+  hide JoinColumn circle
+  class "@ManyToOne" as ManyToOne
+  hide ManyToOne circle
+  class "@CreateDateColumn" as CreateDateColumn
+  hide CreateDateColumn circle
+  class "@UpdateDateColumn" as UpdateDateColumn
+  hide UpdateDateColumn circle
+}
+
+package auto.entity {
+  class "type AutoTyp = 'ELEKTRO' | 'KRAFTSTOFF'" as AutoTyp
+  hide AutoTyp circle
+
+  class Auto <<entity>> <<@Entity>> {
+    @Column() @PrimaryColumn() readonly id: string
+    @Column() readonly marke: string
+    @Column() readonly typ: AutoTyp
+    @Column() readonly preis: number
+    @Column() readonly rabatt: number
+    @Column() readonly lieferbar: boolean
+    @Column() readonly datum: Date
+    @CreateDateColumn() readonly erzeugt: Date
+    @UpdateDateColumn() readonly aktualisiert: Date
+  }
+
+  class Fahrzeugklasse <<entity>> <<@Entity>> {
+    @Column() @PrimaryColumn() readonly id: string
+    @Column() readonly fahrzeugklasse: string
+    @ManyToOne() readonly auto: Auto
+  }
+
+  Auto ..> Entity
+  Auto *--> "*" Fahrzeugklasse : @OneToMany() fahrzeugklassen
+  Auto .up.> AutoTyp
+}
+
+hide empty members
+
+@enduml
