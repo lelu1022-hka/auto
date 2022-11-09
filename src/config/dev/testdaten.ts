@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { type Auto } from '../../auto/entity/auto.entity.js';
 import { type Fahrzeugklasse } from './../../auto/entity/fahrzeugklasse.entity.js';
 
