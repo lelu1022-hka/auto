@@ -61,8 +61,6 @@ export class Auto {
         eager: true,
         cascade: ['insert'],
     })
-
-    //Brauchen wir das wirklich?
     @ApiProperty({ example: ['CABRIO', 'SPORT'] })
     readonly fahrzeugklassen!: Fahrzeugklasse[];
 
