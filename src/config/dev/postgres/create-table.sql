@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS auto (
     id            char(36) PRIMARY KEY USING INDEX TABLESPACE autospace,
     version       integer NOT NULL DEFAULT 0,
     marke         varchar(40) NOT NULL UNIQUE USING INDEX TABLESPACE autospace,
-    typ           varchar(12) NOT NULL CHECK (art ~ 'ELEKTRO|KRAFTSTOFF'),
+    typ           varchar(12) NOT NULL CHECK (typ ~ 'ELEKTRO|KRAFTSTOFF'),
     preis         decimal(8,2) NOT NULL,
     rabatt        decimal(4,3) NOT NULL,
     lieferbar     boolean NOT NULL DEFAULT FALSE,
