@@ -56,7 +56,7 @@ query ($marke: String = "Alpha") {
 }
 
 {
-  "marke": "Alpha"
+  "marke": "Tesla"
 }
 
 ### Suche marke, typ und fahrzeugklassen von Autos mit vorhandener Marke
