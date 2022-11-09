@@ -53,7 +53,7 @@ export class AutoQueryResolver {
             throw new UserInputError('Es wurden keine Autos gefunden.');
         }
 
-        const autosDTO = autos.map((auto) => this.#toAutoDTO(auto));
+        const autosDTO = autos.map((auto:any) => this.#toAutoDTO(auto));
         this.#logger.debug('find: autosDTO=%o', autosDTO);
         return autosDTO;
     }

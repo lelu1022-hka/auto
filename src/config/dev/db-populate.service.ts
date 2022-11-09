@@ -94,10 +94,10 @@ export class DbPopulateService implements OnApplicationBootstrap {
         );
 
         const scriptDir = resolve(configDir, 'dev', typeOrmModuleOptions.type!); // eslint-disable-line @typescript-eslint/no-non-null-assertion
-        let createScript = resolve(scriptDir, 'create-table-buch.sql');
+        let createScript = resolve(scriptDir, 'create-table-auto.sql');
         let sql = readFileSync(createScript, 'utf8');
         await this.#repo.query(sql);
-        createScript = resolve(scriptDir, 'create-table-schlagwort.sql');
+        createScript = resolve(scriptDir, 'create-table-fahrzeugklasse.sql');
         sql = readFileSync(createScript, 'utf8');
         await this.#repo.query(sql);
 
