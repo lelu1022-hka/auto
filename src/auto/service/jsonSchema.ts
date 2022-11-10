@@ -38,7 +38,7 @@ export const jsonSchema: GenericJsonSchema = {
         lieferbar: { type: 'boolean' },
         datum: { type: 'string', format: 'date' },
         homepage: { type: 'string', format: 'uri' },
-        fahrezeugklassen: {
+        fahrzeugklassen: {
             type: 'array',
             items: { type: 'object' },
         },
