@@ -24,23 +24,28 @@ type Auto {
   id: ID
   version: Int
   marke: String
-  typ: String
+  typ: Typ
   preis: Float
   lieferbar: Boolean
   rabatt: Float
   datum: String
-  fahrzeugklasse: [String]
+  fahrzeugklassen: [String]
+}
+
+enum Typ {
+  ELEKTRO
+  KRAFTSTOFF
 }
 
 "Daten für ein neues Auto"
 input AutoInput {
   marke: String
-  typ: String
+  typ: Typ
   preis: Float
   lieferbar: Boolean
   rabatt: Float
   datum: String
-  fahrzeugklasse: [String]
+  fahrzeugklassen: [String]
 }
 
 "Daten für ein zu änderndes Auto"
@@ -48,10 +53,10 @@ input AutoUpdateInput {
   id: ID
   version: Int
   marke: String
-  typ: String
+  typ: Typ
   preis: Float
   lieferbar: Boolean
   rabatt: Float
   datum: String
-  fahrzeugklasse: [String]
+  fahrzeugklassen: [String]
 }
