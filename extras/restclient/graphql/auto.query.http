@@ -49,7 +49,7 @@ POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
-query ($marke: String = "Alpha") {
+query ($marke: String = "Tesla") {
   autos(marke: $marke) {
     typ
   }
@@ -64,7 +64,7 @@ POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
-query ($marke: String = "a") {
+query ($marke: String = "Tesla") {
   autos(marke: $marke) {
     marke
     typ
@@ -73,7 +73,7 @@ query ($marke: String = "a") {
 }
 
 {
-  "marke": "a"
+  "marke": "Tesla"
 }
 
 ### Suche typ von Autos mit NICHT-vorhandener Marke
