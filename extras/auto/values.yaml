@@ -47,7 +47,7 @@ logHealthyPretty: "false"
 dbUser: auto
 
 # -- Passwort für die DB
-dbPassword: "Change Me!!!"
+dbPassword: p
 
 # -- Neuladen der DB beim Start des Appservers
 dbPopulate: "false"
