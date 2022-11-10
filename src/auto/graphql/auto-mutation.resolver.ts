@@ -3,18 +3,18 @@ import { type CreateError, type UpdateError } from '../service/errors.js';
 import { UseGuards, UseInterceptors } from '@nestjs/common';
 import { type Auto } from '../entity/auto.entity.js';
 import { AutoWriteService } from '../service/auto-write.service.js';
+import { type Fahrzeugklasse } from '../entity/fahrzeugklasse.entity.js';
 import { type IdInput } from './auto-query.resolver.js';
 import { JwtAuthGraphQlGuard } from '../../security/auth/jwt/jwt-auth-graphql.guard.js';
 import { ResponseTimeInterceptor } from '../../logger/response-time.interceptor.js';
 import { Roles } from '../../security/auth/roles/roles.decorator.js';
 import { RolesGraphQlGuard } from '../../security/auth/roles/roles-graphql.guard.js';
-import { type Fahrzeugklasse } from '../entity/fahrzeugklasse.entity.js';
 import { UserInputError } from 'apollo-server-express';
 import { getLogger } from '../../logger/logger.js';
 
 type AutoCreateDTO = Omit<
     Auto,
-    'aktualisiert' | 'erzeugt' | 'id' | 'fahrzeugklassen' | 'version'
+    'aktualisiert' | 'erzeugt' | 'fahrzeugklassen' | 'id' | 'version'
 > & { fahrzeugklassen: string[] };
 type AutoUpdateDTO = Omit<Auto, 'aktualisiert' | 'erzeugt' | 'fahrzeugklassen'>;
 
@@ -104,25 +104,32 @@ export class AutoMutationResolver {
 
     #errorMsgCreateAuto(err: CreateError) {
         switch (err.type) {
-            case 'ConstraintViolations':
+            case 'ConstraintViolations': {
                 return err.messages.join(' ');
-            default:
+            }
+            default: {
                 return 'Unbekannter Fehler';
+            }
         }
     }
 
     #errorMsgUpdateAuto(err: UpdateError) {
         switch (err.type) {
-            case 'ConstraintViolations':
+            case 'ConstraintViolations': {
                 return err.messages.join(' ');
-            case 'AutoNotExists':
+            }
+            case 'AutoNotExists': {
                 return `Es gibt kein Auto mit der ID ${err.id}`;
-            case 'VersionInvalid':
+            }
+            case 'VersionInvalid': {
                 return `"${err.version}" ist keine gueltige Versionsnummer`;
-            case 'VersionOutdated':
+            }
+            case 'VersionOutdated': {
                 return `Die Versionsnummer "${err.version}" ist nicht mehr aktuell`;
-            default:
+            }
+            default: {
                 return 'Unbekannter Fehler';
+            }
         }
     }
 }
