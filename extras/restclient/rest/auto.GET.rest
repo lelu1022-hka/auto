@@ -37,4 +37,4 @@ GET {{restUrl}}?sport=true
 GET {{restUrl}}?php=true
 
 ### Suche mit gueltigem Typ
-GET {{restUrl}}?art=ELEKTRO
+GET {{restUrl}}?typ=ELEKTRO

@@ -119,8 +119,8 @@ export class AutoReadService {
         keys.forEach((key) => {
             if (
                 !this.#autoProps.includes(key) &&
-                key !== 'javascript' &&
-                key !== 'typescript'
+                key !== 'cabrio' &&
+                key !== 'sport'
             ) {
                 this.#logger.debug(
                     '#find: ungueltiges Suchkriterium "%s"',
