@@ -23,9 +23,9 @@ const idVorhanden = [
     '00000000-0000-0000-0000-000000000003',
 ];
 
-const markeVorhanden = ['Alpha', 'Beta', 'Gamma'];
+const markeVorhanden = ['Porsche', 'Tesla', 'Bmw'];
 
-const teilMarkeVorhanden = ['a', 't', 'g'];
+const teilMarkeVorhanden = ['p', 't', 'b'];
 
 const teilMarkeNichtVorhanden = ['Xyz', 'abc'];
 
@@ -129,7 +129,7 @@ describe('GraphQL Queries', () => {
     });
 
     each(markeVorhanden).test(
-        'Auto zu vorhandenem Titel %s',
+        'Auto zu vorhandener Marke %s',
         async (marke: string) => {
             // given
             const body: GraphQLRequest = {
