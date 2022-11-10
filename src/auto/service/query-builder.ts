@@ -63,12 +63,12 @@ export class QueryBuilder {
             this.#repo.metadata,
         );
 
-        const { marke, javascript, typescript, ...props } = suchkriterien;
+        const { marke, sport, cabrio, ...props } = suchkriterien;
 
         queryBuilder = this.#buildFahrzeugklassen(
             queryBuilder,
-            javascript, // eslint-disable-line @typescript-eslint/no-unsafe-argument
-            typescript, // eslint-disable-line @typescript-eslint/no-unsafe-argument
+            cabrio, // eslint-disable-line @typescript-eslint/no-unsafe-argument
+            sport, // eslint-disable-line @typescript-eslint/no-unsafe-argument
         );
 
         let useWhere = true;
@@ -106,27 +106,26 @@ export class QueryBuilder {
 
     #buildFahrzeugklassen(
         queryBuilder: SelectQueryBuilder<Auto>,
-        javascript: string | undefined,
-        typescript: string | undefined,
+        sport: string | undefined,
+        cabrio: string | undefined,
     ) {
-        // Schlagwort JAVASCRIPT aus der 2. Tabelle
-        if (javascript === 'true') {
+        if (sport === 'true') {
             // https://typeorm.io/select-query-builder#inner-and-left-joins
             // eslint-disable-next-line no-param-reassign
             queryBuilder = queryBuilder.innerJoinAndSelect(
                 `${this.#autoAlias}.fahrzeugklassen`,
                 'swJS',
-                'swJS.fahrzeugklasse = :javascript',
-                { javascript: 'JAVASCRIPT' },
+                'swJS.fahrzeugklasse = :sport',
+                { sport: 'SPORT' },
             );
         }
-        if (typescript === 'true') {
+        if (cabrio === 'true') {
             // eslint-disable-next-line no-param-reassign
             queryBuilder = queryBuilder.innerJoinAndSelect(
                 `${this.#autoAlias}.fahrzeugklassen`,
                 'swTS',
-                'swTS.fahrzeugklasse = :typescript',
-                { typescript: 'TYPESCRIPT' },
+                'swTS.fahrzeugklasse = :cabrio',
+                { cabrio: 'CABRIO' },
             );
         }
         return queryBuilder;
