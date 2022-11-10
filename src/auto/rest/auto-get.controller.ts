@@ -94,10 +94,10 @@ export class AutoQuery implements Suchkriterien {
     declare readonly datum: string;
 
     @ApiProperty({ required: false })
-    declare readonly javascript: boolean;
+    declare readonly cabrio: boolean;
 
     @ApiProperty({ required: false })
-    declare readonly typescript: boolean;
+    declare readonly sport: boolean;
 }
 
 /**
