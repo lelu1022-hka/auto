@@ -5,7 +5,7 @@ schema {
 
 "Funktionen, um Autodaten zu lesen"
 type Query {
-  autos(titel: String): [Auto!]
+  autos(marke: String): [Auto!]
 
   auto(id: ID!): Auto
 }

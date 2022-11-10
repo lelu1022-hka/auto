@@ -49,14 +49,14 @@ POST {{graphQlUrl}}
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
-query ($marke: String = "Tesla") {
+query ($marke: String = "Porsche") {
   autos(marke: $marke) {
     typ
   }
 }
 
 {
-  "marke": "Tesla"
+  "marke": "Porsche"
 }
 
 ### Suche marke, typ und fahrzeugklassen von Autos mit vorhandener Marke
