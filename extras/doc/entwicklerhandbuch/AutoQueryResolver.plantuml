@@ -30,7 +30,7 @@ package auto {
   }
 
   package graphql #DDDDDD {
-    class "type AutoDTO = Omit<Buch, 'aktualisiert' | 'erzeugt' | 'fahrzeugklassen'> & { fahrzeugklassen: string[] }" as AutoDTO
+    class "type AutoDTO = Omit<Auto, 'aktualisiert' | 'erzeugt' | 'fahrzeugklassen'> & { fahrzeugklassen: string[] }" as AutoDTO
     hide AutoDTO circle
 
     class AutoQueryResolver << control >> << @Resolver() >> << @UseInterceptors() >> {

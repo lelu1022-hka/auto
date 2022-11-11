@@ -257,7 +257,7 @@ export class AutoGetController {
               }
             : { self: { href: `${baseUri}/${id}` } };
 
-        this.#logger.debug('#toModel: buch=%o, links=%o', auto, links);
+        this.#logger.debug('#toModel: auto=%o, links=%o', auto, links);
         /* eslint-disable unicorn/consistent-destructuring */
         const autoModel: AutoModel = {
             marke: auto.marke,

@@ -13,10 +13,10 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-CREATE TABLE IF NOT EXISTS schlagwort (
+CREATE TABLE IF NOT EXISTS fahrzeugklasse (
     id         CHAR(36) NOT NULL PRIMARY KEY,
-    buch_id    CHAR(36) NOT NULL REFERENCES buch,
-    schlagwort VARCHAR(16) NOT NULL CHECK (schlagwort = 'JAVASCRIPT' OR schlagwort = 'TYPESCRIPT'),
+    auto_id    CHAR(36) NOT NULL REFERENCES buch,
+    fahtzeugklasse VARCHAR(16) NOT NULL CHECK (fahrzeugklasse = 'CABRIO' OR schlagwort = 'SPORT'),
 
-    INDEX schlagwort_buch_idx(buch_id)
-) TABLESPACE buchspace ROW_FORMAT=COMPACT;
+    INDEX fahrzeugklasse_auto_idx(auto_id)
+) TABLESPACE autospace ROW_FORMAT=COMPACT;

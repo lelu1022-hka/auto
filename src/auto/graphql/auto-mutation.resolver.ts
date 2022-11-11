@@ -50,7 +50,7 @@ export class AutoMutationResolver {
     @Mutation()
     @Roles('admin', 'mitarbeiter')
     async update(@Args('input') auto: AutoUpdateDTO) {
-        this.#logger.debug('update: buch=%o', auto);
+        this.#logger.debug('update:auto=%o', auto);
         const versionStr = `"${auto.version?.toString()}"`;
 
         const result = await this.#service.update(

@@ -26,19 +26,16 @@
 -- https://dev.mysql.com/blog-archive/mysql-8-0-16-introducing-check-constraint
 -- impliziter Index als B-Baum durch UNIQUE
 
-CREATE TABLE IF NOT EXISTS buch (
+CREATE TABLE IF NOT EXISTS auto (
     id            CHAR(36) NOT NULL PRIMARY KEY,
     version       INT NOT NULL DEFAULT 0,
-    titel         VARCHAR(40) UNIQUE NOT NULL,
+    marke         VARCHAR(40) UNIQUE NOT NULL,
     rating        INT NOT NULL CHECK (rating >= 0 AND rating <= 5),
-    art           VARCHAR(12) NOT NULL CHECK (art = 'DRUCKAUSGABE' OR art = 'KINDLE'),
-    verlag        VARCHAR(12) NOT NULL CHECK (verlag = 'FOO_VERLAG' OR verlag = 'BAR_VERLAG'),
+    typ           VARCHAR(12) NOT NULL CHECK (art = 'ELEKTRO' OR art = 'KRAFTSTOFF'),
     preis         DECIMAL(8,2) NOT NULL,
     rabatt        DECIMAL(4,3) NOT NULL,
     lieferbar     BOOLEAN NOT NULL DEFAULT FALSE,
     datum         DATE,
-    homepage      VARCHAR(40),
-    isbn          VARCHAR(16) UNIQUE NOT NULL,
     erzeugt       DATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP),
     aktualisiert  DATETIME NOT NULL DEFAULT (CURRENT_TIMESTAMP)
-) TABLESPACE buchspace ROW_FORMAT=COMPACT;
+) TABLESPACE autospace ROW_FORMAT=COMPACT;

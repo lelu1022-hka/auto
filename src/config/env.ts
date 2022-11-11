@@ -12,8 +12,8 @@ dotenv.config();
 const {
     NODE_ENV,
     PORT,
-    BUCH_SERVICE_HOST,
-    BUCH_SERVICE_PORT,
+    AUTO_SERVICE_HOST,
+    AUTO_SERVICE_PORT,
     K8S_TLS,
     DB_TYPE,
     DB_NAME,
@@ -45,8 +45,8 @@ interface NodeConfigEnv {
 const nodeConfigEnv: NodeConfigEnv = {
     nodeEnv: NODE_ENV,
     port: PORT,
-    serviceHost: BUCH_SERVICE_HOST,
-    servicePort: BUCH_SERVICE_PORT,
+    serviceHost: AUTO_SERVICE_HOST,
+    servicePort: AUTO_SERVICE_PORT,
 };
 
 interface ApolloConfigEnv {

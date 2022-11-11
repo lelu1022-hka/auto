@@ -31,7 +31,7 @@ package auto {
 
     class AutoWriteService << control >> <<@Injectable()>> {
       + async create(auto: Auto): Promise<string|AutoInvalid|MarkeExists>
-      + async update(id: string, auto: Auto, version: string): Promise<number|BuchInvalid|MarkeExists|VersionInvalid|VersionOutdated>
+      + async update(id: string, auto: Auto, version: string): Promise<number|AutoInvalid|MarkeExists|VersionInvalid|VersionOutdated>
       + async delete(id: string): Promise<boolean>
     }
 
